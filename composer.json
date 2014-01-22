@@ -1,0 +1,28 @@
+{
+    "name"        : "codeblanche/hmvc",
+    "description" : "A very basic HMVC structure for PHP",
+    "authors"     : [
+        {
+            "name"  : "Merten van Gerven",
+            "email" : "merten@codeblanche.com"
+        }
+    ],
+    "license"     : "BSD-3-Clause",
+    "keywords"    : [
+        "CodeBlanche",
+        "MVC",
+        "HMVC",
+        "PHP"
+    ],
+    "require"     : {
+        "php"             : ">=5.3.3",
+        "codeblanche/web" : "1.*"
+    },
+    "autoload"    : {
+        "classmap" : ["./"],
+        "psr-0"    : {
+            "DI" : "src/"
+        }
+    }
+}
+

@@ -1,4 +1,4 @@
-MVC
+HMVC
 ===
 
-PHP MVC Essentials
+A very basic HMVC structure for PHP
