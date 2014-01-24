@@ -11,12 +11,6 @@ class Identifiable
      */
     public static function className()
     {
-        if (version_compare(phpversion(), '5.5') === -1) {
-            return get_called_class();
-        }
-
-        /** @noinspection PhpLanguageLevelInspection */
-
-        return self::class;
+        return get_called_class();
     }
 } 
