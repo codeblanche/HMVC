@@ -2,14 +2,14 @@
 
 namespace HMVC;
 
+use HMVC\Abstraction\Identifiable;
 use HMVC\Collection\PluginCollection;
-use SplObjectStorage;
 use Web\Request\Request;
 use Web\Response\Response;
 use Web\Route\Router;
 use Web\Web;
 
-abstract class Controller
+abstract class Controller extends Identifiable
 {
     /**
      * @var Web

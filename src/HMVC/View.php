@@ -2,10 +2,11 @@
 
 namespace HMVC;
 
+use HMVC\Abstraction\Identifiable;
 use HMVC\Abstraction\Printable;
 use HMVC\Collection\PluginCollection;
 
-abstract class View implements Printable
+abstract class View extends Identifiable implements Printable
 {
     /**
      * @var PluginCollection
