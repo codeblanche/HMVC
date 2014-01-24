@@ -47,6 +47,16 @@ abstract class Controller extends Identifiable
     protected $plugins;
 
     /**
+     * @var bool
+     */
+    private $running = false;
+
+    /**
+     * @var array
+     */
+    private $params = array();
+
+    /**
      * @param \Web\Web $web
      * @param Model    $model
      * @param View     $view
@@ -71,6 +81,9 @@ abstract class Controller extends Identifiable
      */
     final public function run($params = array())
     {
+        $this->running = true;
+        $this->params  = $params;
+
         /** @var $plugin Controller */
         foreach ($this->plugins as $name => $plugin) {
             $this->view->addPlugin($plugin->run($params), $name);
@@ -103,6 +116,14 @@ abstract class Controller extends Identifiable
         }
         else {
             $this->plugins->$name = $plugin;
+        }
+
+        /*
+         * Allow late registration of plugins
+         */
+        
+        if ($this->running) {
+            $this->view->addPlugin($plugin->run($this->params), $name);
         }
 
         return $this;
