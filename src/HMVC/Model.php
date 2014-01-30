@@ -2,8 +2,8 @@
 
 namespace HMVC;
 
-use HMVC\Abstraction\Identifiable;
+use HMVC\Abstraction\AbstractIdentifiable;
 
-abstract class Model extends Identifiable
+abstract class Model extends AbstractIdentifiable
 {
 }
