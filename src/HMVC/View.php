@@ -43,7 +43,11 @@ abstract class View extends AbstractIdentifiable implements Printable
             $this->plugins->append($plugin);
         }
         else {
+            /*
+             * Set value using both methods to work around isset() bug.
+             */
             $this->plugins->$name = $plugin;
+            $this->plugins[$name] = $plugin;
         }
 
         return $this;
